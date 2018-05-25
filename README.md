@@ -76,8 +76,15 @@ docker-compose up
 ```
 docker-compose up -d
 ```
-
-4、测试访问
+4、查看容器
+```
+docker-compose ps
+```
+5、停止容器
+```
+docker-compose down
+```
+6、测试访问
 ```
 http://127.0.0.1
 ```
