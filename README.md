@@ -39,7 +39,7 @@ docker-compose version 1.21.2, build 1719ceb
 1、 拉取项目
 
 ```
-git clone https://github.com/merle-song/docker-lnmp.git
+git clone https://github.com/harveysong/docker-lnmp.git
 ```
 
 2、目录结构
