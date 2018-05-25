@@ -62,8 +62,8 @@ lnmp
 │   ├── php.ini
 │   └── log
 │       └── php-fpm.log
-├── web
-│   └── index.html
+├── web                 // 项目请放在该目录下
+│   └── index.html       
 └── docker-compose.yml
 ```
 3、执行构建命令，在项目目录下执行
