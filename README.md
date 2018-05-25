@@ -15,6 +15,19 @@ windows 7 需要安装docker toolbox 来实现Docker
 
 * 选择下载 Docker CE stable 版本
 
+### Docker-compose 安装
+Docker for Mac 与 Docker Toolbox 默认自带 Docker-compose ，所以不需要额外安装。
+
+#### Linux
+
+```
+sudo curl -L https://github.com/docker/compose/releases/download/1.21.2/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose
+
+sudo chmod +x /usr/local/bin/docker-compose
+
+$ docker-compose --version
+docker-compose version 1.21.2, build 1719ceb
+```
 
 
 ### 构建环境
