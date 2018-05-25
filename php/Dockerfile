@@ -1,7 +1,6 @@
 FROM php:7.1-fpm 
 MAINTAINER harvey <harveysong@aliyun.com>
 
-ADD php.ini-production /usr/local/etc/php/php.ini
 RUN apt-get update \
 	&& apt-get install -y libmemcached-dev zlib1g-dev curl libmcrypt-dev
 
@@ -22,11 +21,6 @@ RUN curl -L -o /tmp/memcached.tar.gz "https://github.com/php-memcached-dev/php-m
     && docker-php-ext-configure memcached \
     && docker-php-ext-install memcached \
     && rm /tmp/memcached.tar.gz 
-
-ADD ./php.ini /usr/local/php/etc/
-
-RUN cp /usr/local/php/etc/php-fpm.conf.default /usr/local/php/etc/php-fpm.conf \
-  && cp /usr/local/php/etc/php-fpm.d/www.conf.default /usr/local/php/etc/php-fpm.d/www.conf
 
 CMD ["php-fpm"]
 
