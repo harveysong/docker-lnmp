@@ -3,3 +3,5 @@
 /web/*
 !/web/index.html
 /mysql/data/*
+/nginx/log/error.log
+
