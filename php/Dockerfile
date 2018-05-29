@@ -2,7 +2,7 @@ FROM php:7.1-fpm
 MAINTAINER harvey <harveysong@aliyun.com>
 
 RUN apt-get update \
-	&& apt-get install -y libmemcached-dev zlib1g-dev curl libmcrypt-dev
+	&& apt-get install -y openssl openssl-devel libmemcached-dev zlib1g-dev curl libmcrypt-dev
 
 RUN docker-php-ext-install gettext mysqli opcache pdo_mysql sockets mcrypt
 
