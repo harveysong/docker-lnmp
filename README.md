@@ -1,7 +1,7 @@
 ## Docker-compose 构建LNMP环境
 
 docker-compose 利用yml 文件实现多个容器的快速构建，帮助提高构建效率。
-此处感谢 [voocel/docker-lnmp](https://github.com/voocel/docker-lnmp)提供了yml相关问题的实例借鉴。
+
 ### Windows 7 安装
 windows 7 需要安装docker toolbox 来实现Docker
   
