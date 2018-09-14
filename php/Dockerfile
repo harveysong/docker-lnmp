@@ -4,7 +4,7 @@ MAINTAINER harvey <harveysong@aliyun.com>
 RUN apt-get update \
 	&& apt-get install -y openssl libssl-dev libmemcached-dev zlib1g-dev curl libmcrypt-dev
 
-RUN docker-php-ext-install gettext mysqli opcache pdo_mysql sockets mcrypt
+RUN docker-php-ext-install gettext mysqli opcache pdo_mysql sockets mcrypt exif
 
 RUN pecl install redis \
 && docker-php-ext-enable redis
