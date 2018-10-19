@@ -93,8 +93,14 @@ Ps.项目需要访问Mysql
 ```
 DB_HOST=mysql  //不需要填写ip地址
 ```
-
-
+```
+artisan () {
+	(
+		env DB_HOST=127.0.0.1 DB_PORT='mysql-port' php artisan "${@}"
+	)
+}
+Laravel Artisan 
+```
 
 
 
