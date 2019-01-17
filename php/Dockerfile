@@ -2,18 +2,17 @@ FROM php:7.1-fpm
 MAINTAINER harvey <harveysong@aliyun.com>
 
 RUN apt-get update \
-	&& apt-get install -y openssl libssl-dev libfreetype6-dev libxpm-dev libpng-dev libwebp-dev libjpeg62-turbo-dev libmemcached-dev zlib1g-dev curl libmcrypt-dev 
+	&& apt-get install -y openssl libssl-dev libmemcached-dev zlib1g-dev curl libmcrypt-dev libjpeg62-turbo-dev libpng-dev libfreetype6-dev \
+	&& docker-php-ext-configure gd --with-freetype-dir=/usr/include/  --with-jpeg-dir=/usr/include/ \
+	&& docker-php-ext-install -j$(nproc) gd
 
-RUN docker-php-ext-configure gd --with-gd --with-webp-dir --with-jpeg-dir \
-    --with-png-dir --with-zlib-dir --with-xpm-dir --with-freetype-dir \
-    --enable-gd-native-ttf
-
-RUN docker-php-ext-install gettext mysqli opcache pdo_mysql sockets mcrypt exif gd
+RUN docker-php-ext-install gettext mysqli  opcache pdo_mysql sockets mcrypt  exif
 
 RUN pecl install redis \
 && docker-php-ext-enable redis
 
-RUN pecl install mongodb \
+RUN pecl channel-update pecl.php.net && \
+    pecl install mongodb \
 && docker-php-ext-enable mongodb
 
 RUN pecl install xdebug \
