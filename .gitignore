@@ -1,8 +1,8 @@
-/nginx/conf.d/
+/nginx/conf.d
 !/nginx/conf.d/default.conf
-/web/
+/web
 !/web/index.html
-/mysql/data/
+/mysql/data
 /nginx/log/error.log
 /redis/data/dump.rdb
 
