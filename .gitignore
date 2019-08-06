@@ -3,7 +3,6 @@
 /web/*
 !/web/index.html
 /mysql/data/*
-!/mysql/data/.gitignore
 /nginx/log/error.log
 /redis/data/dump.rdb
 
