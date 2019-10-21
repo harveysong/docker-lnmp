@@ -1,4 +1,4 @@
-FROM php:7.1-fpm 
+FROM php:7.2-fpm 
 MAINTAINER harvey <harveysong@aliyun.com>
 
 RUN apt-get update \
@@ -6,14 +6,16 @@ RUN apt-get update \
 	&& docker-php-ext-configure gd --with-freetype-dir=/usr/include/  --with-jpeg-dir=/usr/include/ \
 	&& docker-php-ext-install -j$(nproc) gd
 
-RUN docker-php-ext-install gettext mysqli  opcache pdo_mysql sockets mcrypt  exif
+RUN docker-php-ext-install gettext mysqli  opcache pdo_mysql sockets exif
+
+RUN pecl install mcrypt-1.0.1 \
+&& docker-php-ext-enable mcrypt
 
 RUN pecl install redis \
 && docker-php-ext-enable redis
 
-RUN pecl channel-update pecl.php.net && \
-    pecl install mongodb \
-&& docker-php-ext-enable mongodb
+#RUN pecl install mongodb \
+#&& docker-php-ext-enable mongodb
 
 RUN pecl install xdebug \
     && docker-php-ext-enable xdebug
